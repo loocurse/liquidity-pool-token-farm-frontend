@@ -18,20 +18,23 @@ import {
   rainbowWallet,
 } from '@rainbow-me/rainbowkit/wallets'
 import { Chain } from '@rainbow-me/rainbowkit'
-import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains'
+import { sepolia } from 'wagmi/chains'
 import { createClient, configureChains, WagmiConfig } from 'wagmi'
 import { infuraProvider } from 'wagmi/providers/infura'
 import { publicProvider } from 'wagmi/providers/public'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
+import { AppContextProvider } from 'contexts/AppContext'
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
   return (
     <ThemeProvider defaultTheme="system" attribute="class">
-      <HeadGlobal />
-      <Web3Wrapper>
-        <Component key={router.asPath} {...pageProps} />
-      </Web3Wrapper>
+      <AppContextProvider>
+        <HeadGlobal />
+        <Web3Wrapper>
+          <Component key={router.asPath} {...pageProps} />
+        </Web3Wrapper>
+      </AppContextProvider>
     </ThemeProvider>
   )
 }
@@ -71,7 +74,7 @@ const gnosisChain: Chain = {
 
 // Web3 Configs
 const { chains, provider } = configureChains(
-  [mainnet, polygon, optimism, arbitrum, gnosisChain],
+  [sepolia],
   [
     infuraProvider({ apiKey: process.env.NEXT_PUBLIC_INFURA_ID !== '' && process.env.NEXT_PUBLIC_INFURA_ID }),
     jsonRpcProvider({
@@ -122,7 +125,7 @@ export function Web3Wrapper({ children }) {
           learnMoreUrl: app.url,
         }}
         chains={chains}
-        initialChain={1} // Optional, initialChain={1}, initialChain={chain.mainnet}, initialChain={gnosisChain}
+        initialChain={sepolia} // Optional, initialChain={1}, initialChain={chain.mainnet}, initialChain={gnosisChain}
         showRecentTransactions={true}
         theme={resolvedTheme === 'dark' ? darkTheme() : lightTheme()}
       >

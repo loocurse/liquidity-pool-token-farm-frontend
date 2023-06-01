@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { erc20ABI, useAccount, useContractReads } from 'wagmi'
 import { ethers } from 'ethers'
 import farmABI from 'utils/farm-abi'
@@ -69,18 +69,13 @@ export default function BalancesTable() {
         functionName: 'calculateReward',
         args: [address, process.env.NEXT_PUBLIC_LP3 as `0x${string}`]
       },
-
     ],
   })
-
-  useEffect(() => console.log(data), [data])
-
-
   if (isLoading) return <div className="">Loading...</div>
   return (
     <div className='border rounded max-w-xl mx-auto px-5 py-1 text-left my-9'>
       <h2 className='text-left my-3 text-3xl mt-8 uppercase font-bold '>Step 1: Balances</h2>
-      <p className='text-slate-600'>Remember: you cannot stake already staked tokens.</p>
+      <p className='text-gray-200'>Remember: you cannot stake already staked tokens.</p>
       <table className="table-auto mx-auto w-full mt-4">
         <thead>
           <tr className='border'>

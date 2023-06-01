@@ -34,7 +34,7 @@ export default function SetAllowance() {
   return (
     <div className='border rounded max-w-xl mx-auto px-5 py-1 text-left my-9'>
       <h2 className='text-left my-3 text-3xl mt-8 uppercase font-bold'>Step 3: Allowances</h2>
-      <p className='text-slate-600'>This step requires you to grant the farming contract access to your tokens to stake it. Allow it maximum.</p>
+      <p className='text-gray-200'>This step requires you to grant the farming contract access to your tokens to stake it. Allow it maximum.</p>
       {isFetched && <p>Current allowance: {ethers.utils.formatEther(data)}</p>}
       <button disabled={!write} onClick={() => write()} className='p-2 rounded bg-slate-500 text-white my-3'>Set allowance</button>
     </div>

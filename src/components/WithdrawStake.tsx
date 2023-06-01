@@ -22,7 +22,7 @@ export default function WithdrawStake() {
   return (
     <div className='border rounded max-w-xl mx-auto px-5 py-1 text-left my-9'>
       <h2 className='text-left my-3 text-3xl mt-8 uppercase font-bold'>Step 6: Unstake</h2>
-      <p className='text-slate-600'>Unstake to claim rewards.</p>
+      <p className='text-gray-200'>Unstake to claim rewards.</p>
       <div className="flex items-stretch mt-3">
         <button disabled={!write} onClick={() => write()} className='p-2 rounded bg-slate-500 text-white my-3'>Unstake</button>
       </div>

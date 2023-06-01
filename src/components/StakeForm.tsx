@@ -26,11 +26,11 @@ export default function StakeForm() {
 
   return (
     <div className='border rounded max-w-xl mx-auto px-5 py-1 text-left my-9'>
-      <h2 className='text-left my-3 text-3xl mt-8 uppercase font-bold'>Step 4: Allowances</h2>
-      <p className='text-slate-600'>You can now stake as much as you have allowed in the previous step.</p>
-      <div className="flex items-stretch mt-3">
-        <input type='number' className='mr-2 text-5xl border rounded' value={amount} onChange={(e) => setAmount(+e.target.value)}></input>
-        <button disabled={!write} onClick={() => write()} className='p-2 rounded bg-slate-500 text-white my-3'>Stake</button>
+      <h2 className='text-left my-3 text-3xl mt-8 uppercase font-bold'>Step 4: Stake</h2>
+      <p className='text-gray-200'>You can now stake as much as you have allowed in the previous step.</p>
+      <div className="flex items-stretch my-3">
+        <input type='number' className='mr-2 bg-[#1E2325] text-5xl border rounded' value={amount} onChange={(e) => setAmount(+e.target.value)}></input>
+        <button disabled={!write} onClick={() => write()} className='p-2 rounded bg-slate-500 text-white my-3 text-xl'>Stake</button>
       </div>
 
     </div>

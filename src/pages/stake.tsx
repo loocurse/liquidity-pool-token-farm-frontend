@@ -5,6 +5,7 @@ import SelectToken from 'components/SelectToken'
 import SetAllowance from 'components/SetAllowance'
 import StakeForm from 'components/StakeForm'
 import { ThemeToggleButton, ThemeToggleList } from 'components/Theme'
+import Todo from 'components/Todo'
 import ViewReward from 'components/ViewReward'
 import WithdrawStake from 'components/WithdrawStake'
 import { useAppContext } from 'contexts/AppContext'
@@ -15,18 +16,8 @@ import { useAccount } from 'wagmi'
 
 function Header() {
   return (
-    <header className={styles.header}>
-      <div>
-        <ThemeToggleList />
-      </div>
-      <div className="flex items-center">
-        <ThemeToggleButton /> header <ThemeToggleList />
-      </div>
-
-      <div className="flex items-center">
-        <ThemeToggleButton />
-        <ThemeToggleList />
-      </div>
+    <header className='w-100 mt-9' >
+      <h2 className='text-center text-3xl font-extrabold'>Yield Farm</h2>
     </header>
   )
 }
@@ -65,6 +56,7 @@ export default function Stake() {
           <StakeForm />
           <ViewReward />
           <WithdrawStake />
+          <Todo />
         </>)}
 
 

@@ -17,8 +17,8 @@ export default function ViewReward() {
   return (
     <div className='border rounded max-w-xl mx-auto px-5 py-1 text-left my-9'>
       <h2 className='text-left my-3 text-3xl mt-8 uppercase font-bold'>Step 5: View rewards</h2>
-      <p className='text-slate-600'>View your reward for the selected token.</p>
-      {isFetched && <p>Reward: {ethers.utils.formatEther(data)} $REWARD</p>}
+      <p className='text-gray-200'>View your reward for the selected token.</p>
+      {isFetched && <p className='my-3'>Reward: {ethers.utils.formatEther(data)} $REWARD</p>}
     </div>
   )
 }
